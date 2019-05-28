@@ -1,11 +1,10 @@
 package com.jibrus.jibrus.models;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -15,8 +14,16 @@ public class Grade {
     private int id_grade;
     private int value_grade;
     private Date date_received;
-    private int student_id;
-    private int teacher_id;
-    private int subject_id;
-
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable=false)
+    private Students student;
+    // private int student_id;
+    @ManyToOne
+    @JoinColumn(name = "teacher_id", nullable=false)
+    private Teacher teacher;
+    //   private int teacher_id;
+    @ManyToOne
+    @JoinColumn(name = "subject_id", nullable=false)
+    private Subject subject;
+    // private int subject_id;
 }
