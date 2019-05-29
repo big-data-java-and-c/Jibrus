@@ -1,16 +1,15 @@
-package com.jibrus.jibrus.models;
+package com.jibrus.jibrus.entities;
 
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Data
 @Entity
 public class Grade {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_grade;
     private int value_grade;
     private Date date_received;

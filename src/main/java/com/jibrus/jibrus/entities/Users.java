@@ -1,4 +1,4 @@
-package com.jibrus.jibrus.models;
+package com.jibrus.jibrus.entities;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Users {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int user_id;
     private String email;
     private String password;
@@ -18,10 +18,12 @@ public class Users {
     @OneToMany(mappedBy = "user")
     private List<Students> students;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id", nullable=false)
-    private Roles role;
 
     @OneToMany(mappedBy = "user")
     private List<Teacher> teachers;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Roles role;
+
 }

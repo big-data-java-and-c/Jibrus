@@ -1,17 +1,15 @@
-package com.jibrus.jibrus.models;
+package com.jibrus.jibrus.entities;
 
 import lombok.Data;
-import org.h2.engine.User;
 
 import javax.persistence.*;
-import java.security.acl.Group;
 import java.util.List;
 
 @Data
 @Entity
 public class Students {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int student_id;
     private String first_name;
     private String last_name;
@@ -20,15 +18,15 @@ public class Students {
     private String province;
     private String zip_code;
     private String phone_number;
-    private int group_id;
+
     @OneToMany(mappedBy ="student")
     private List<Grade> grade;
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable=false)
+    @JoinColumn(name = "user_id")
     private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "id_group", nullable=false)
+    @JoinColumn(name = "id_group")
     private Groups group;
 
 

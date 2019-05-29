@@ -1,16 +1,15 @@
-package com.jibrus.jibrus.models;
+package com.jibrus.jibrus.entities;
 
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
 public class Teacher {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_teacher;
     private String Name;
     private String Second_name;
@@ -20,9 +19,8 @@ public class Teacher {
     private Users user;
 
     @OneToMany(mappedBy ="teacher")
-    private List<Grade> grade;
+    private List<Grade> grades;
 
-    @ManyToOne
-    @JoinColumn(name = "id_lesson", nullable=false)
-    private Lesson lesson;
+    @OneToMany(mappedBy ="teacher")
+    private List<Lesson> lessons;
 }

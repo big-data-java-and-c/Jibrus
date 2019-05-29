@@ -1,4 +1,4 @@
-package com.jibrus.jibrus.models;
+package com.jibrus.jibrus.entities;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 public class Subject {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_subject;
     private String name;
     private int value_ECTS;
