@@ -1,14 +1,16 @@
 package com.jibrus.jibrus.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
-public class Subject {
+public class Subject implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_subject;
@@ -22,9 +24,11 @@ public class Subject {
             inverseJoinColumns = @JoinColumn(name = "id_teacher"))
     Set<Teacher> teachers;
 
+    @JsonBackReference
     @OneToMany(mappedBy ="subject")
     private List<Grade> grade;
 
+    @JsonBackReference
     @OneToMany(mappedBy ="subject")
     private List<Lesson> lessons;
 }

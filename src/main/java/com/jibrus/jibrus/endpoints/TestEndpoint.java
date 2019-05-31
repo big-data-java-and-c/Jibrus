@@ -1,16 +1,23 @@
 package com.jibrus.jibrus.endpoints;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.jibrus.jibrus.services.TestServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api")
 @RestController
 public class TestEndpoint {
+    private TestServiceImpl testService;
+
+    @Autowired
+    public TestEndpoint(TestServiceImpl testService) {
+        this.testService = testService;
+    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/test")
-public String cos(){
-    return "hellol world";
-}
+    public String cos() {
+        return testService.getTest();
+    }
+
+
 }
