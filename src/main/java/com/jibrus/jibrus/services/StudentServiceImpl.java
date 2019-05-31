@@ -23,13 +23,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public void addStudent(Students student) {
-        Students studentToCheck = studentDao.getStudentById(student.getStudent_id());
-        if (studentToCheck != null) {
-            logger.info("Student o takim ID istnieje");
-            return;
-        }
-        logger.info("Dodano nowego studenta");
-        studentDao.addStudent(student);
+         studentDao.addStudent(student);
     }
 
     @Override

@@ -5,10 +5,7 @@ import com.jibrus.jibrus.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -18,6 +15,12 @@ public class StudentEndpoint {
     @Autowired
     public StudentEndpoint(StudentService studentService) {
         this.studentService = studentService;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/student/add")
+    public ResponseEntity<Students> addStudent(@RequestBody Students student) {
+        studentService.addStudent(student);
+        return new ResponseEntity<>(student, HttpStatus.CREATED);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/student/{id}")

@@ -11,24 +11,28 @@ import java.util.List;
 
 @Data
 @Entity
+@Table
 public class Users implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
     private String email;
     private String password;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "user")
-    private List<Students> students;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "user")
-    private List<Teacher> teachers;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "role_id")
+    @ManyToOne(targetEntity = Roles.class)
     private Roles role;
+
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "user")
+//    private List<Students> students;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "user")
+//    private List<Teacher> teachers;
+//
+//    @JsonManagedReference
+//    @ManyToOne
+//    @JoinColumn(name = "role_id")
+//    private Roles role;
 
 }

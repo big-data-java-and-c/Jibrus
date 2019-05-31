@@ -25,15 +25,15 @@ INSERT INTO USERS VALUES(9,'student9@wp@wp.pl','12345',2);
 INSERT INTO USERS VALUES(10,'student10@wp.pl','12345',2);
 INSERT INTO USERS VALUES(11,'student11@wp.pl','12345',2);
 
-INSERT INTO STUDENTS VALUES(1, 'Politechniki 13' ,'Łódź' , 'Wiktor', 'Jachimczak' , '712 013 123', 'Łódzkie', '93-581', 4, 1);
-INSERT INTO STUDENTS VALUES(2, 'Pabinicka 3' ,'Łódź' , 'Kamil', 'Żarski' , '924856712', 'Łódzkie', '43-435', 4, 2);
-INSERT INTO STUDENTS VALUES(4, 'Aleje 3 Maja' ,'Łódź' , 'Klaudia', 'Frączkwoska' , '728462936', 'Łódzkie', '97-073', 3, 6);
+INSERT INTO STUDENTS VALUES(1, 'Politechniki 13' ,'Łódź' , 'Wiktor', 'Jachimczak' , '712 013 123', 'Łódzkie', '93-581',  1);
+INSERT INTO STUDENTS VALUES(2, 'Pabinicka 3' ,'Łódź' , 'Kamil', 'Żarski' , '924856712', 'Łódzkie', '43-435',  2);
+INSERT INTO STUDENTS VALUES(4, 'Aleje 3 Maja' ,'Łódź' , 'Klaudia', 'Frączkwoska' , '728462936', 'Łódzkie', '97-073', 6);
 
-INSERT INTO STUDENTS VALUES(5, 'Politechniki 13' ,'Łódź' , 'Wiktor', 'Jachimczak' , '712 013 123', 'Łódzkie', '93-581', 4, 7);
-INSERT INTO STUDENTS VALUES(6, 'Pabinicka 3' ,'Łódź' , 'Kamil', 'Żarski' , '924856712', 'Łódzkie', '43-435', 4, 8);
-INSERT INTO STUDENTS VALUES(7, 'Piękna 69' ,'Łódź' , 'Zbyszek', 'Kielecki' , '987654321', 'Łódzkie', '38-819', 3, 9);
-INSERT INTO STUDENTS VALUES(8, 'Aleje 3 Maja' ,'Łódź' , 'Klaudia', 'Frączkwoska' , '728462936', 'Łódzkie', '97-073', 3, 10);
-INSERT INTO STUDENTS VALUES(3, 'Brzydka 9' ,'Łódź' , 'Tadeusz', 'Nowa' , '648148254', 'Łódzkie', '31-987', 3, 11);
+INSERT INTO STUDENTS VALUES(5, 'Politechniki 13' ,'Łódź' , 'Wiktor', 'Jachimczak' , '712 013 123', 'Łódzkie', '93-581',  7);
+INSERT INTO STUDENTS VALUES(6, 'Pabinicka 3' ,'Łódź' , 'Kamil', 'Żarski' , '924856712', 'Łódzkie', '43-435', 8);
+INSERT INTO STUDENTS VALUES(7, 'Piękna 69' ,'Łódź' , 'Zbyszek', 'Kielecki' , '987654321', 'Łódzkie', '38-819',  9);
+INSERT INTO STUDENTS VALUES(8, 'Aleje 3 Maja' ,'Łódź' , 'Klaudia', 'Frączkwoska' , '728462936', 'Łódzkie', '97-073',  10);
+INSERT INTO STUDENTS VALUES(3, 'Brzydka 9' ,'Łódź' , 'Tadeusz', 'Nowa' , '648148254', 'Łódzkie', '31-987', 11);
 
 INSERT INTO TEACHER VALUES (1, 'profesor',15000, 'secondNameProfesor', 3);
 INSERT INTO TEACHER VALUES (2, 'doktor',1500, 'secondNameDoktor', 4) ;

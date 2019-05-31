@@ -32,7 +32,7 @@ public class StudentDaoImp implements StudentDao {
 
     @Override
     public Students getStudentById(int studentId) {
-        return  (Students) entityManager.createQuery("FROM Students WHERE student_id=:studentId")
+        return (Students) entityManager.createQuery("FROM Students WHERE student_id=:studentId")
                 .setParameter("studentId",studentId)
                 .getSingleResult();
 

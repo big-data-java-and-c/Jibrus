@@ -15,11 +15,11 @@ public class Groups implements Serializable {
     private int id_group;
     private String name_grupy;
 
-    @JsonBackReference
-    @OneToMany(mappedBy ="group")
-    private List<Lesson> lessons;
-
-    @JsonBackReference
-    @OneToMany(mappedBy ="group")
-    private List<Students> students;
+//    @JsonBackReference
+//    @OneToMany(mappedBy ="group")
+//    private List<Lesson> lessons;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy ="group")
+//    private List<Students> students;
 }

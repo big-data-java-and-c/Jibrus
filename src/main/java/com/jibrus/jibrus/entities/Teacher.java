@@ -18,16 +18,20 @@ public class Teacher implements Serializable {
     private String Second_name;
     private int Salary;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable=false)
+    @OneToOne
+    @JoinColumn(name = "user")
     private Users user;
 
-    @JsonBackReference
-    @OneToMany(mappedBy ="teacher")
-    private List<Grade> grades;
-
-    @JsonBackReference
-    @OneToMany(mappedBy ="teacher")
-    private List<Lesson> lessons;
+//    @JsonManagedReference
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", nullable=false)
+//    private Users user;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy ="teacher")
+//    private List<Grade> grades;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy ="teacher")
+//    private List<Lesson> lessons;
 }
