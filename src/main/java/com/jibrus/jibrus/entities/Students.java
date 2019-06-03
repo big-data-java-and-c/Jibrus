@@ -11,7 +11,8 @@ public class Students implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @Column(name = "DISPLAY_NAME")
+    private String displayName;
     private String address;
     private String city;
     private String province;
@@ -27,15 +28,15 @@ public class Students implements Serializable {
     public Students() {
     }
 
-    public Students(String name, Users user, int indeks) {
-        this.name = name;
+    public Students(String displayName, Users user, int indeks) {
+        this.displayName = displayName;
         this.user = user;
         this.indeks = indeks;
     }
 
-    public Students(String name, String address, String city, String province,
+    public Students(String displayName, String address, String city, String province,
                     String zip_code, String phone_number, int indeks, Users user) {
-        this.name = name;
+        this.displayName = displayName;
         this.address = address;
         this.city = city;
         this.province = province;
