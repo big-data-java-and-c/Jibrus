@@ -5,9 +5,9 @@ INSERT into GROUPS values(4,'IO4');
 INSERT into GROUPS values(5,'IO5');
 INSERT into GROUPS values(6,'IO6');
 
-INSERT INTO roles(role_type) VALUES('ADMIN');
-INSERT INTO roles(role_type)VALUES('STUDENT');
-INSERT INTO roles(role_type) VALUES('TEACHER');
+INSERT INTO ROLES(role_type) VALUES('ADMIN');
+INSERT INTO ROLES(role_type)VALUES('STUDENT');
+INSERT INTO ROLES(role_type) VALUES('TEACHER');
 
 INSERT INTO USERS VALUES(1,'ekoGroszek@wp.pl','12345',2);
 INSERT INTO USERS VALUES(2,'xewionn@wp.pl','12345',2);

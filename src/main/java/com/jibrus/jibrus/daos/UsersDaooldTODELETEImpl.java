@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class UsersDaoImpl implements UsersDao {
+public class UsersDaooldTODELETEImpl implements UserDaoold {
 
     @Autowired
     private EntityManager entityManager;

@@ -21,7 +21,7 @@ public class Subject implements Serializable {
     @JoinTable(
             name = "teacher_nn_subject",
             joinColumns = @JoinColumn(name = "id_subject"),
-            inverseJoinColumns = @JoinColumn(name = "id_teacher"))
+            inverseJoinColumns = @JoinColumn(name = "id"))
     Set<Teacher> teachers;
 
     @JsonBackReference
