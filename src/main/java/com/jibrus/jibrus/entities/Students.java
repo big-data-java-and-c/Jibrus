@@ -20,7 +20,7 @@ public class Students implements Serializable {
     private String last_name;
     private String address;
     private String city;
-    private String province;
+        private String province;
     private String zip_code;
     private String phone_number;
 

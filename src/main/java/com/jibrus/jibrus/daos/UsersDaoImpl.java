@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+
 @Repository
 public class UsersDaoImpl implements UsersDao {
 
@@ -14,6 +15,13 @@ public class UsersDaoImpl implements UsersDao {
     public Users getUserById(int id) {
         return (Users) entityManager.createQuery("FROM Users WHERE user_id =: id")
                 .setParameter("id", id)
+                .getSingleResult();
+    }
+
+    @Override
+    public Users getUserByEmail(String email) {
+        return (Users) entityManager.createQuery("FROM Users WHERE email =: email")
+                .setParameter("email", email)
                 .getSingleResult();
     }
 

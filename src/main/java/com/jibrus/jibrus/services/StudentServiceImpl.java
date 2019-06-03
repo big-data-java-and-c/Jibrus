@@ -23,7 +23,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public void addStudent(Students student) {
-         studentDao.addStudent(student);
+        studentDao.addStudent(student);
     }
 
     @Override
@@ -55,11 +55,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Students> getAllStudents() {
-        return null;
+        return studentDao.getAllStudents();
     }
 
     @Override
     public List<Students> getStudentsByGroup() {
-        return null;
+        return studentDao.getAllStudents();
     }
 }

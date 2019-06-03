@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 public interface UsersDao {
     Users getUserById(int id);
+    Users getUserByEmail(String email);
 }
