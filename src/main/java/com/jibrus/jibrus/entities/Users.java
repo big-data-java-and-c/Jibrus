@@ -16,7 +16,9 @@ public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
-    private String email;
+  // @Column(nullable = false, unique = true)
+    private String username;
+
     private String password;
 
     @ManyToOne(targetEntity = Roles.class)

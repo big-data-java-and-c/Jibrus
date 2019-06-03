@@ -50,7 +50,8 @@ public class StudentDaoImp implements StudentDao {
 
     @Override
     public List<Students> getAllStudents() {
-        return null;
+        return  entityManager.createQuery("FROM Students")
+                .getResultList();
     }
 
     @Override

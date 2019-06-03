@@ -7,7 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class StudentEndpoint {
     private StudentService studentService;
@@ -27,5 +30,10 @@ public class StudentEndpoint {
     public ResponseEntity<Students> getStudent(@PathVariable int id) {
         Students student = studentService.getStudentById(id);
         return new ResponseEntity<>(student, HttpStatus.OK);
+    }
+    @RequestMapping(method = RequestMethod.GET, path = "/students")
+    public ResponseEntity<List<Students>> getAllStudents() {
+        List<Students> students = studentService.getAllStudents();
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 }
