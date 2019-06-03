@@ -36,7 +36,7 @@ public class Students implements Serializable {
 //  //  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //    @JsonManagedReference
 //    @ManyToOne
-//    @JoinColumn(name = "user_id")
+//    @JoinColumn(name = "id")
 //    private Users user;
 //    //  @JsonIgnore
 //    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

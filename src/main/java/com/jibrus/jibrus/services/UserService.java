@@ -5,5 +5,5 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public interface UserService {
     Users getUserById(int id);
-   // UserDetails getUserByEmail(String username);
+   // UserDetails getUserByEmail(String email);
 }

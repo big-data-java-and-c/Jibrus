@@ -1,40 +1,40 @@
 package com.jibrus.jibrus.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @Entity
 @Table
 public class Users implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
-  // @Column(nullable = false, unique = true)
-    private String username;
+    private Long id;
 
+    @Column(name = "EMAIL")
+    @Email
+    private String email;
+
+    @Column(name = "PASSWORD")
     private String password;
 
-    @ManyToOne(targetEntity = Roles.class)
-    private Roles role;
+    @ManyToOne(targetEntity = Role.class)
+    private Role role;
 
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "user")
-//    private List<Students> students;
-//
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "user")
-//    private List<Teacher> teachers;
-//
-//    @JsonManagedReference
-//    @ManyToOne
-//    @JoinColumn(name = "role_id")
-//    private Roles role;
+    public Users() {
+    }
+
+    public Users(@Email String email, String password, Role role) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+
 
 }

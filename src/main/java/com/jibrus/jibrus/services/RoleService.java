@@ -1,8 +1,8 @@
 package com.jibrus.jibrus.services;
 
-import com.jibrus.jibrus.entities.Roles;
+import com.jibrus.jibrus.entities.Role;
 
 public interface RoleService {
-    Roles getRole(String name);
-    Roles getRoleById(int id);
+    Role getRole(String name);
+    Role getRoleById(int id);
 }

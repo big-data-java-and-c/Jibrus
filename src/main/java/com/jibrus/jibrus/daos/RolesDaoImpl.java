@@ -1,6 +1,6 @@
 package com.jibrus.jibrus.daos;
 
-import com.jibrus.jibrus.entities.Roles;
+import com.jibrus.jibrus.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,15 +13,15 @@ public class RolesDaoImpl implements RolesDao {
 
 
     @Override
-    public Roles getRole(String name) {
-        return (Roles) entityManager.createQuery("FROM Roles where role_type =: name")
+    public Role getRole(String name) {
+        return (Role) entityManager.createQuery("FROM Roles where role_type =: name")
                 .setParameter("name", name)
                 .getSingleResult();
     }
 
     @Override
-    public Roles getRoleById(int id) {
-        return (Roles) entityManager.createQuery("FROM Role where role_id =: id")
+    public Role getRoleById(int id) {
+        return (Role) entityManager.createQuery("FROM Role where role_id =: id")
                 .setParameter("role_id", id)
                 .getSingleResult();
     }

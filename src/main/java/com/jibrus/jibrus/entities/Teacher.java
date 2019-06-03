@@ -24,7 +24,7 @@ public class Teacher implements Serializable {
 
 //    @JsonManagedReference
 //    @ManyToOne
-//    @JoinColumn(name = "user_id", nullable=false)
+//    @JoinColumn(name = "id", nullable=false)
 //    private Users user;
 //
 //    @JsonBackReference

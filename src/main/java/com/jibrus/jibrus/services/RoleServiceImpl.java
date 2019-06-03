@@ -1,7 +1,7 @@
 package com.jibrus.jibrus.services;
 
 import com.jibrus.jibrus.daos.RolesDao;
-import com.jibrus.jibrus.entities.Roles;
+import com.jibrus.jibrus.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +12,12 @@ public class RoleServiceImpl implements RoleService {
     private RolesDao roleDao;
 
     @Override
-    public Roles getRole(String name) {
+    public Role getRole(String name) {
         return roleDao.getRole(name);
     }
 
     @Override
-    public Roles getRoleById(int id) {
+    public Role getRoleById(int id) {
         return roleDao.getRoleById(id);
     }
 }
