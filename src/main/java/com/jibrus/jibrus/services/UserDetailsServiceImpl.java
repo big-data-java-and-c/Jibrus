@@ -96,14 +96,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
         if (role.getName().equals(RoleName.TEACHER)) {
-            Teacher teacher = new Teacher(signUpForm.getDisplayName(), user, signUpForm.getIndex());
+            Teacher teacher = new Teacher(signUpForm.getDisplayName(), user );
 
             teacherRepository.save(teacher);
             logger.info(teacher.getName() + " teacher added");
         }
 
         if (role.getName().equals(RoleName.STUDENT)) {
-            Students student = new Students(signUpForm.getDisplayName(), user, signUpForm.getIndex());
+            Students student = new Students(signUpForm.getDisplayName(), user);
             System.out.println("Added student: " + student);
             studentRepository.save(student);
         }
