@@ -11,18 +11,18 @@ public class RolesDaoImpl implements RolesDao {
     @Autowired
     EntityManager entityManager;
 
-
     @Override
     public Role getRole(String name) {
-        return (Role) entityManager.createQuery("FROM Roles where role_type =: name")
+        return  (Role) entityManager.createQuery("FROM Role where role_type =: name")
                 .setParameter("name", name)
                 .getSingleResult();
+
     }
 
     @Override
     public Role getRoleById(int id) {
-        return (Role) entityManager.createQuery("FROM Role where role_id =: id")
-                .setParameter("role_id", id)
+        return (Role) entityManager.createQuery("FROM Role where id =: id")
+                .setParameter("id", id)
                 .getSingleResult();
     }
 }

@@ -17,9 +17,9 @@ public class Grade implements Serializable {
     private Date date_received;
     @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "student_id", nullable=false)
+    @JoinColumn(name = "id", nullable=false)
     private Students student;
-    // private int student_id;
+    // private int id;
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "teacher_id", nullable=false)

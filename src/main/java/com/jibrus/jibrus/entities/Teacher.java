@@ -1,37 +1,31 @@
 package com.jibrus.jibrus.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @Entity
 public class Teacher implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_teacher;
-    private String Name;
-    private String Second_name;
-    private int Salary;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private int salary;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     private Users user;
+    private Integer indeks;
 
-//    @JsonManagedReference
-//    @ManyToOne
-//    @JoinColumn(name = "id", nullable=false)
-//    private Users user;
-//
-//    @JsonBackReference
-//    @OneToMany(mappedBy ="teacher")
-//    private List<Grade> grades;
-//
-//    @JsonBackReference
-//    @OneToMany(mappedBy ="teacher")
-//    private List<Lesson> lessons;
+    public Teacher(String name,  Users user, Integer indeks) {
+        this.name = name;
+        salary = 2500;
+        this.user = user;
+        this.indeks = indeks;
+    }
+
+    public Teacher() {
+    }
 }

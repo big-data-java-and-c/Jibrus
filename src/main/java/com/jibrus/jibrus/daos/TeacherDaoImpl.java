@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class TeacherDaoImpl implements TeacherDao {
+public class TeacherDaoImpl  {
 
     @Autowired
     private EntityManager entityManager;
