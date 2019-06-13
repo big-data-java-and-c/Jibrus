@@ -20,6 +20,7 @@ public class JwtProvider {
     @Value("${app.jwtExpiration}")
     private int jwtExpiration;
 
+
     public boolean validateJwtToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);

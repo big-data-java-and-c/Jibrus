@@ -20,7 +20,7 @@ public class Students implements Serializable {
     private String phone_number;
     private int indeks;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     private Users user;
 
