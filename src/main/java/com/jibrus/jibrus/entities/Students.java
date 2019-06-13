@@ -18,7 +18,6 @@ public class Students implements Serializable {
     private String province;
     private String zip_code;
     private String phone_number;
-    private int indeks;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
@@ -28,21 +27,19 @@ public class Students implements Serializable {
     public Students() {
     }
 
-    public Students(String displayName, Users user, int indeks) {
+    public Students(String displayName, Users user) {
         this.displayName = displayName;
         this.user = user;
-        this.indeks = indeks;
     }
 
     public Students(String displayName, String address, String city, String province,
-                    String zip_code, String phone_number, int indeks, Users user) {
+                    String zip_code, String phone_number, Users user) {
         this.displayName = displayName;
         this.address = address;
         this.city = city;
         this.province = province;
         this.zip_code = zip_code;
         this.phone_number = phone_number;
-        this.indeks = indeks;
         this.user = user;
     }
 

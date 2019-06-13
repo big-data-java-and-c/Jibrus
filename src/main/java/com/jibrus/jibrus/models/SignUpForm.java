@@ -22,9 +22,6 @@ public class SignUpForm {
     @Size(max = 50)
     private String displayName;
 
-
     private String role;
-
-    private Integer index;
 
 }

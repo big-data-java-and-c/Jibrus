@@ -17,13 +17,12 @@ public class Teacher implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     private Users user;
-    private Integer indeks;
 
-    public Teacher(String name,  Users user, Integer indeks) {
+
+    public Teacher(String name,  Users user) {
         this.name = name;
         salary = 2500;
         this.user = user;
-        this.indeks = indeks;
     }
 
     public Teacher() {
