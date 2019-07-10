@@ -10,6 +10,6 @@ public interface StudentService {
     Students getStudentById(int studentId);
     void deleteStudentById(int studentId);
     void editStudent(Students student);
-    List<Students> getAllStudents();
+    Iterable<Students> getAllStudents();
     List<Students> getStudentsByGroup();
 }
