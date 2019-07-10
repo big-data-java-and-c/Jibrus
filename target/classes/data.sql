@@ -28,7 +28,7 @@ INSERT INTO USERS VALUES (11, 'student11@wp.pl', '12345', 2);
 
 
 INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
-  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1);
+  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2);
 
 
 
