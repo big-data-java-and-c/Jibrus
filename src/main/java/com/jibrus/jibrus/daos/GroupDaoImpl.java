@@ -12,10 +12,10 @@ public class GroupDaoImpl implements GroupDao{
     @Autowired
     private EntityManager entityManager;
 
-    public String getGroupById(int id) {
-        return  entityManager.createQuery("FROM Groups WHERE id_group =: id")
+    public Groups getGroupById(int id) {
+        return (Groups) entityManager.createQuery("FROM Groups WHERE id_group =: id")
                 .setParameter("id", id)
-                .getSingleResult().toString();
+                .getSingleResult();
     }
 
     @Override public Iterable<Groups> getAllGroups() {

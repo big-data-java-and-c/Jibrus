@@ -3,6 +3,6 @@ package com.jibrus.jibrus.daos;
 import com.jibrus.jibrus.entities.Groups;
 
 public interface GroupDao {
-    String getGroupById(int id);
+    Groups getGroupById(int id);
     Iterable<Groups> getAllGroups();
 }

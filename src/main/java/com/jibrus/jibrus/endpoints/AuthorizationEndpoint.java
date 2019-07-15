@@ -32,13 +32,13 @@ public class AuthorizationEndpoint {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<String> registerUser(@Valid @RequestBody SignUpForm signUpForm) {
+    public ResponseEntity<Object> registerUser(@Valid @RequestBody SignUpForm signUpForm) {
 
         if (!userDetailsService.registerUser(signUpForm))
             return new ResponseEntity<>("Fail -> Email is already in use!", HttpStatus.BAD_REQUEST);
 
 
-        return ResponseEntity.ok().body("User registered successfully!");
+        return new ResponseEntity<>("{//'}",HttpStatus.OK);
     }
 
 
