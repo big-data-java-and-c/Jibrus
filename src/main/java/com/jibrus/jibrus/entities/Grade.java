@@ -11,13 +11,14 @@ import java.util.Date;
 @Entity
 public class Grade implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_grade;
     private int value_grade;
-    private Date date_received;
+
+    private String date_received;
     @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "id", nullable=false)
+    @JoinColumn(name = "student_id", nullable=false)
     private Students student;
     // private int id;
     @JsonManagedReference

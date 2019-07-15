@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface GradeDao {
     Grade getGradeById(int id);
-    List<Grade> getGradesByStudentId(int studentId);
+    Iterable<Grade> getGradesByStudentId(int studentId);
 }
