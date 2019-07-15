@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 @Service
 public class GradeServiceImpl implements GradeService{
     @Autowired
@@ -20,7 +19,9 @@ public class GradeServiceImpl implements GradeService{
 
     @Override
     @Transactional
-    public List<Grade> getGradesByStudentId(int studentId) {
+    public Iterable<Grade> getGradesByStudentId(int studentId) {
         return gradeDao.getGradesByStudentId(studentId);
     }
+
+
 }

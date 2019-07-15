@@ -22,7 +22,7 @@ public class GradeDaoImpl implements GradeDao{
                 .getSingleResult();
     }
 
-    public List<Grade> getGradesByStudentId(int studentId){
+    public Iterable<Grade> getGradesByStudentId(int studentId){
         return (List<Grade>) entityManager.createQuery("FROM Grade where student_id =: studentId")
                 .setParameter("studentId", studentId)
                 .getResultList();
