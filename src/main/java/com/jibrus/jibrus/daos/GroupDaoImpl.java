@@ -1,9 +1,11 @@
 package com.jibrus.jibrus.daos;
 
+import com.jibrus.jibrus.entities.Groups;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class GroupDaoImpl implements GroupDao{
@@ -16,4 +18,8 @@ public class GroupDaoImpl implements GroupDao{
                 .getSingleResult().toString();
     }
 
+    @Override public Iterable<Groups> getAllGroups() {
+        return entityManager.createQuery("FROM Groups")
+                .getResultList();
+    }
 }
