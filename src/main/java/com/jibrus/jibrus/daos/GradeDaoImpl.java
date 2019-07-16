@@ -36,5 +36,13 @@ public class GradeDaoImpl implements GradeDao {
                 .getResultList();
     }
 
+    @Override
+    public Iterable<Integer> getGradesValueBySubjectIdAndStudentId(int subjectId, int studentId) {
+        return entityManager.createQuery("SELECT value_grade FROM Grade where subject_id =: subjectId AND student_id =: studentId")
+                .setParameter("subjectId", subjectId)
+                .setParameter("studentId", studentId)
+                .getResultList();
+    }
+
 }
 

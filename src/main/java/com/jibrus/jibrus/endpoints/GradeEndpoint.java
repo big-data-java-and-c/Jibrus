@@ -27,6 +27,10 @@ public class GradeEndpoint {
     public ResponseEntity getGradesBySubjectIdAndStudentId(@PathVariable("subject_id") Integer subjectId, @PathVariable("student_id") Integer studentId) {
         return ResponseEntity.ok(gradeService.getGradesBySubjectIdAndStudentId(subjectId, studentId));
     }
+    @GetMapping("/grades/{subject_id}/student/{student_id}")
+    public ResponseEntity getGradesValueBySubjaectIdAndStudentId(@PathVariable("subject_id") Integer subjectId, @PathVariable("student_id") Integer studentId) {
+        return ResponseEntity.ok(gradeService.getGradesValueBySubjectIdAndStudentId(subjectId, studentId));
+    }
 }
 
 

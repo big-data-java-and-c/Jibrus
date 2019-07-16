@@ -31,4 +31,9 @@ public class Grade implements Serializable {
     @JoinColumn(name = "subject_id", nullable=false)
     private Subject subject;
     // private int subject_id;
+
+
+    public int getValue_grade() {
+        return value_grade;
+    }
 }
