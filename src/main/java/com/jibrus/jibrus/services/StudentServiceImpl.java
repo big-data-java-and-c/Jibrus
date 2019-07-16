@@ -29,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Students getStudentById(int studentId) {
-        return null;
+        return studentDao.findById(studentId);
     }
 
     @Override

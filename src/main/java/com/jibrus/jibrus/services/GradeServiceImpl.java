@@ -23,5 +23,10 @@ public class GradeServiceImpl implements GradeService{
         return gradeDao.getGradesByStudentId(studentId);
     }
 
+    @Override
+    public Iterable<Grade> getGradesBySubjectIdAndStudentId(int subjectId, int studentId) {
+        return gradeDao.getGradesBySubjectIdAndStudentId( subjectId,  studentId);
+    }
+
 
 }

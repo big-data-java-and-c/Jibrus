@@ -27,7 +27,7 @@ public class StudentEndpoint {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/student/{id}")
-    public ResponseEntity<Students> getStudent(@PathVariable int id) {
+    public ResponseEntity<Students> getStudent(@PathVariable Integer id) {
         Students student = studentService.getStudentById(id);
         return new ResponseEntity<>(student, HttpStatus.OK);
     }

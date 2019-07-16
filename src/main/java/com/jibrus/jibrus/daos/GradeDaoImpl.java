@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-public class GradeDaoImpl implements GradeDao{
+public class GradeDaoImpl implements GradeDao {
     private EntityManager entityManager;
 
     @Autowired
@@ -22,8 +22,16 @@ public class GradeDaoImpl implements GradeDao{
                 .getSingleResult();
     }
 
-    public Iterable<Grade> getGradesByStudentId(int studentId){
+    public Iterable<Grade> getGradesByStudentId(int studentId) {
         return (List<Grade>) entityManager.createQuery("FROM Grade where student_id =: studentId")
+                .setParameter("studentId", studentId)
+                .getResultList();
+    }
+
+    @Override
+    public Iterable<Grade> getGradesBySubjectIdAndStudentId(int subjectId, int studentId) {
+        return entityManager.createQuery("FROM Grade where subject_id =: subjectId AND student_id =: studentId")
+                .setParameter("subjectId", subjectId)
                 .setParameter("studentId", studentId)
                 .getResultList();
     }
