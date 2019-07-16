@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
@@ -30,6 +28,12 @@ public class StudentEndpoint {
     public ResponseEntity<Students> getStudent(@PathVariable Integer id) {
         Students student = studentService.getStudentById(id);
         return new ResponseEntity<>(student, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/student/group/{id}")
+    public ResponseEntity<Iterable<Students>> getStudentsByGroupId(@PathVariable Integer id){
+        return new ResponseEntity<>(studentService.getStudentsByGroupId(id), HttpStatus.OK);
     }
 //    @RequestMapping(method = RequestMethod.GET, path = "/students")
 //    public ResponseEntity<List<Students>> getAllStudents() {

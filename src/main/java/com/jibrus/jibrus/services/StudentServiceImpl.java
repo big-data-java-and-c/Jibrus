@@ -1,20 +1,21 @@
 package com.jibrus.jibrus.services;
 
 import com.jibrus.jibrus.daos.StudentDao;
+import com.jibrus.jibrus.entities.Groups;
 import com.jibrus.jibrus.entities.Students;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
+    private GroupSerivce groupSerivce;
 
     @Autowired
-    public StudentServiceImpl(StudentDao studentDao) {
+    public StudentServiceImpl(StudentDao studentDao, GroupSerivce groupSerivce) {
         this.studentDao = studentDao;
+        this.groupSerivce = groupSerivce;
     }
 
     @Override
@@ -47,8 +48,9 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.findAll();
     }
 
-    @Override
-    public List<Students> getStudentsByGroup() {
-        return null;
+    @Override public Iterable<Students> getStudentsByGroupId(Integer id) {
+        Groups group = groupSerivce.getGroupById(id);
+        return studentDao.findAllByGroup(group);
     }
+
 }
