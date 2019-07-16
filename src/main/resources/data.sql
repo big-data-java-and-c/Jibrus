@@ -33,10 +33,15 @@ INSERT INTO TEACHER(name,salary,user) VALUES ('profesor',15000, 3);
 
 
 
-INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
-  VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1);
-INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
-  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2);
+-- INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
+--   VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1);
+-- INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
+--   VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2);
+
+INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user, group_id)
+  VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1, 1);
+INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user, group_id)
+  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2, 1);
 
 
 

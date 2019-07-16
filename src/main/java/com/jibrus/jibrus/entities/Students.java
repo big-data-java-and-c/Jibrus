@@ -19,6 +19,10 @@ public class Students implements Serializable {
     private String zip_code;
     private String phone_number;
 
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Groups group;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     private Users user;
