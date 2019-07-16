@@ -10,6 +10,4 @@ public class SubjectDto {
 
     private int id_subject;
     private String name;
-    private int value_ECTS;
-    private List<Grade> grade;
 }

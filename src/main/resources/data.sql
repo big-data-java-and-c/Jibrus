@@ -27,6 +27,8 @@ INSERT INTO USERS VALUES (11, 'student11@wp.pl', '12345', 2);
 
 INSERT INTO SUBJECT VALUES(1, 'Matematyka Dyskretna', 6);
 
+INSERT INTO SUBJECT VALUES(2, 'Analiza Matematyczna', 5);
+INSERT INTO SUBJECT VALUES(3, 'Podstawy Programowania', 4);
 
 
 INSERT INTO TEACHER(name,salary,user) VALUES ('profesor',15000, 3);
