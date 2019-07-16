@@ -27,6 +27,9 @@ public class Students implements Serializable {
     @JoinColumn(name = "user")
     private Users user;
 
+    @ManyToOne
+    @JoinColumn(name = "id_grade")
+    private Grade grade;
 
     public Students() {
     }

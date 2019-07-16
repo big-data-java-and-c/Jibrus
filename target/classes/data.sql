@@ -27,19 +27,31 @@ INSERT INTO USERS VALUES (11, 'student11@wp.pl', '12345', 2);
 
 INSERT INTO SUBJECT VALUES(1, 'Matematyka Dyskretna', 6);
 
+INSERT INTO SUBJECT VALUES(2, 'Analiza Matematyczna', 5);
+INSERT INTO SUBJECT VALUES(3, 'Podstawy Programowania', 4);
 
 
 INSERT INTO TEACHER(name,salary,user) VALUES ('profesor',15000, 3);
 
 
 
-INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
-  VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1);
-INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
-  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2);
+-- INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
+--   VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1);
+-- INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user)
+--   VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2);
+
+INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user, group_id)
+  VALUES ('Wiktor', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  1, 1);
+INSERT INTO STUDENTS(DISPLAY_NAME, address, city, province, zip_code, phone_number, user, group_id)
+  VALUES ('Kamil', 'szkolna 11', 'uć', 'lodzkie', '12-345', '123123123',  2, 1);
 
 
 
 
 INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',1,1,1);
+INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',1,1,1);
+INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',1,1,1);
+
+INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',2,1,1);
+INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',2,1,1);
 

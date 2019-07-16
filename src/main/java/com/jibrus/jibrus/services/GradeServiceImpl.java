@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class GradeServiceImpl implements GradeService{
+public class GradeServiceImpl implements GradeService {
     @Autowired
     private GradeDao gradeDao;
 
@@ -21,6 +21,16 @@ public class GradeServiceImpl implements GradeService{
     @Transactional
     public Iterable<Grade> getGradesByStudentId(int studentId) {
         return gradeDao.getGradesByStudentId(studentId);
+    }
+
+    @Override
+    public Iterable<Grade> getGradesBySubjectIdAndStudentId(int subjectId, int studentId) {
+        return gradeDao.getGradesBySubjectIdAndStudentId(subjectId, studentId);
+    }
+
+    @Override
+    public Iterable<Integer> getGradesValueBySubjectIdAndStudentId(int subjectId, int studentId) {
+        return gradeDao.getGradesValueBySubjectIdAndStudentId(subjectId, studentId);
     }
 
 
