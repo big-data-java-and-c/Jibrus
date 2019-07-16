@@ -10,4 +10,5 @@ public interface StudentService {
     void editStudent(Students student);
     Iterable<Students> getAllStudents();
     Iterable<Students> getStudentsByGroupId(Integer id);
+    Long getStudentIdByUserId(Long id);
 }

@@ -53,4 +53,9 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.findAllByGroup(group);
     }
 
+    @Override public Long getStudentIdByUserId(Long id) {
+        Students student = studentDao.findByUserId(id);
+        return student.getId();
+    }
+
 }

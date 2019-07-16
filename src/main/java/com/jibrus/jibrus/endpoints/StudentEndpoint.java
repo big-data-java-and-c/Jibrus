@@ -35,6 +35,11 @@ public class StudentEndpoint {
     public ResponseEntity<Iterable<Students>> getStudentsByGroupId(@PathVariable Integer id){
         return new ResponseEntity<>(studentService.getStudentsByGroupId(id), HttpStatus.OK);
     }
+
+    @GetMapping("/student/user/{id}")
+    public ResponseEntity<Long> getStudentIdByUserId(@PathVariable Long id){
+        return new ResponseEntity<Long>(studentService.getStudentIdByUserId(id), HttpStatus.OK);
+    }
 //    @RequestMapping(method = RequestMethod.GET, path = "/students")
 //    public ResponseEntity<List<Students>> getAllStudents() {
 //        List<Students> students = studentService.getAllStudents();
