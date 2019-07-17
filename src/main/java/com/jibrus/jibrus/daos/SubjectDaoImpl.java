@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class SubjectDaoImpl implements SubjectDao {
@@ -15,7 +16,7 @@ public class SubjectDaoImpl implements SubjectDao {
     private EntityManager entityManager;
 
     @Override
-    public Iterable<SubjectDto> getAllSubjects() {
+    public List<SubjectDto> getAllSubjects() {
         return entityManager.createQuery("SELECT id_subject, name FROM Subject").getResultList();
     }
 
