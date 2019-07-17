@@ -2,8 +2,6 @@ package com.jibrus.jibrus.services;
 
 import com.jibrus.jibrus.entities.Students;
 
-import java.util.List;
-
 public interface StudentService {
     void addStudent(Students student);
     Students getStudentByName(String name);
@@ -11,5 +9,6 @@ public interface StudentService {
     void deleteStudentById(int studentId);
     void editStudent(Students student);
     Iterable<Students> getAllStudents();
-    List<Students> getStudentsByGroup();
+    Iterable<Students> getStudentsByGroupId(Integer id);
+    Long getStudentIdByUserId(Long id);
 }

@@ -13,7 +13,7 @@ public class GroupServiceImpl implements GroupSerivce {
 
     @Override
     @Transactional
-    public String getGroupById(int id) {
+    public Groups getGroupById(int id) {
         return groupDao.getGroupById(id);
     }
 
