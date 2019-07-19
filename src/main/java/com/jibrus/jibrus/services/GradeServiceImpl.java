@@ -36,12 +36,18 @@ public class GradeServiceImpl implements GradeService {
         return gradeDao.getGradesValueBySubjectIdAndStudentId(subjectId, studentId);
     }
 
-    @Override public void deleteGradeById(Integer grade_id) {
+    @Override
+    public void deleteGradeById(Integer grade_id) {
         Optional<Grade> grade = Optional.ofNullable(this.getGradeById(grade_id));
-        if (!grade.isPresent()){
+        if (!grade.isPresent()) {
             throw new GradeDoesNotExist("Nie znaleziono oceny o  id " + grade_id);
         }
         gradeDao.deleteById(grade_id);
+    }
+
+    @Override
+    public void insertGrade(Grade grade) {
+        gradeDao.insertGrade(grade);
     }
 
 }

@@ -65,5 +65,17 @@ public class GradeDaoImpl implements GradeDao {
 
     }
 
+    @Override
+    public void insertGrade(Grade grade) {
+        entityManager.createQuery("INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (valueG, data,studId,teachId,subID)")
+                .setParameter("valueG", grade.getValue_grade())
+                .setParameter("data", grade.getDate_received())
+                .setParameter("studId", grade.getStudent())
+                .setParameter("teachId", grade.getTeacher())
+                .setParameter("subID", grade.getSubject())
+                .executeUpdate();
+       // INSERT INTO GRADE(VALUE_GRADE, DATE_RECEIVED, STUDENT_ID, TEACHER_ID,SUBJECT_ID) VALUES (5, '12/08/1948',1,1,1);
+    }
+
 }
 

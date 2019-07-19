@@ -1,12 +1,15 @@
 package com.jibrus.jibrus.endpoints;
 
+import com.jibrus.jibrus.entities.Grade;
 import com.jibrus.jibrus.services.GradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 36000)
 @RestController
@@ -30,14 +33,26 @@ public class GradeEndpoint {
     public ResponseEntity getGradesBySubjectIdAndStudentId(@PathVariable("subject_id") Integer subjectId, @PathVariable("student_id") Integer studentId) {
         return ResponseEntity.ok(gradeService.getGradesBySubjectIdAndStudentId(subjectId, studentId));
     }
+
     @GetMapping("/grades/{subject_id}/student/{student_id}")
     public ResponseEntity getGradesValueBySubjaectIdAndStudentId(@PathVariable("subject_id") Integer subjectId, @PathVariable("student_id") Integer studentId) {
         return ResponseEntity.ok(gradeService.getGradesValueBySubjectIdAndStudentId(subjectId, studentId));
     }
+
     @Transactional
     @DeleteMapping("/delete/{grade_id}")
-    public ResponseEntity<Void> deleteGradeById(@PathVariable("grade_id") Integer grade_id){
+    public ResponseEntity<Void> deleteGradeById(@PathVariable("grade_id") Integer grade_id) {
         gradeService.deleteGradeById(grade_id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    //@PostMapping("/insert")
+
+    @RequestMapping(value = "/insert", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<Void> insertGrade(@Valid @RequestBody Grade grade) {
+        gradeService.insertGrade(grade);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

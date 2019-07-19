@@ -8,4 +8,5 @@ public interface GradeDao {
     Iterable<Grade> getGradesBySubjectIdAndStudentId(int subjectId, int studentId);
     Iterable<Integer> getGradesValueBySubjectIdAndStudentId(int subjectId, int studentId);
     void deleteById(Integer grade_id);
+    void insertGrade(Grade grade);
 }

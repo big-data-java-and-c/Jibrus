@@ -8,4 +8,5 @@ public interface GradeService {
     Iterable<Grade> getGradesBySubjectIdAndStudentId(int subjectId, int studentId);
     Iterable<Integer> getGradesValueBySubjectIdAndStudentId(int subjectId, int studentId);
     void deleteGradeById(Integer grade_id);
+    void insertGrade(Grade grade);
 }
