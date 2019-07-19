@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 @CrossOrigin(origins = "*", maxAge = 36000)
 @RestController
 @RequestMapping("/api/grade")
@@ -32,6 +34,7 @@ public class GradeEndpoint {
     public ResponseEntity getGradesValueBySubjaectIdAndStudentId(@PathVariable("subject_id") Integer subjectId, @PathVariable("student_id") Integer studentId) {
         return ResponseEntity.ok(gradeService.getGradesValueBySubjectIdAndStudentId(subjectId, studentId));
     }
+    @Transactional
     @DeleteMapping("/delete/{grade_id}")
     public ResponseEntity<Void> deleteGradeById(@PathVariable("grade_id") Integer grade_id){
         gradeService.deleteGradeById(grade_id);
