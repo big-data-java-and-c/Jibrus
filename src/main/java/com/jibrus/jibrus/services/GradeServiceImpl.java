@@ -2,9 +2,12 @@ package com.jibrus.jibrus.services;
 
 import com.jibrus.jibrus.daos.GradeDao;
 import com.jibrus.jibrus.entities.Grade;
+import com.jibrus.jibrus.exceptions.GradeDoesNotExist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 public class GradeServiceImpl implements GradeService {
@@ -33,5 +36,12 @@ public class GradeServiceImpl implements GradeService {
         return gradeDao.getGradesValueBySubjectIdAndStudentId(subjectId, studentId);
     }
 
+    @Override public void deleteGradeById(Integer grade_id) {
+        Optional<Grade> grade = Optional.ofNullable(this.getGradeById(grade_id));
+        if (!grade.isPresent()){
+            throw new GradeDoesNotExist("Nie znaleziono oceny o  id " + grade_id);
+        }
+        gradeDao.deleteById(grade_id);
+    }
 
 }
