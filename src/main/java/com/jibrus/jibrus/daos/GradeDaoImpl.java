@@ -45,12 +45,12 @@ public class GradeDaoImpl implements GradeDao {
                 .setParameter("studentId", studentId)
                 .getResultList();
     }
+
+
     @Override public void deleteById(Integer grade_id) {
 
+        entityManager.createQuery("DELETE FROM Grade where grade_id =: grade_id").executeUpdate();
 //        entityManager.getTransaction().begin();
-        Query query = entityManager.createQuery("DELETE FROM Grade where grade_id =: grade_id ");
-        query.setParameter(grade_id, grade_id);
-        query.executeUpdate();
 //        entityManager.getTransaction().commit();
 //        entityManager.close();
 //        try {
